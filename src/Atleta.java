@@ -29,7 +29,7 @@ public abstract class Atleta  implements Serializable{
     public String toString() {
         return "Atleta:\n" +
                 "Nome: " + nome +
-                "\nNúmero: " + numero;
+                "\nNÃºmero: " + numero;
     }
 
     public abstract String treina();

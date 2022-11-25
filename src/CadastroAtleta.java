@@ -12,7 +12,7 @@ public class CadastroAtleta {
         String[] dadosOut = new String [3];
 
         dadosOut[0] = JOptionPane.showInputDialog("Entre com o nome:");
-        dadosOut[1] = JOptionPane.showInputDialog("Entre com o n˙mero:");
+        dadosOut[1] = JOptionPane.showInputDialog("Entre com o n√∫mero:");
         dadosOut[2] = JOptionPane.showInputDialog("Entre com " + dadosIn +" :");
 
         return dadosOut;
@@ -30,7 +30,7 @@ public class CadastroAtleta {
 
     public Corredor leCorredor(){
         String[] valores = new String[3];
-        String velocidade = "a velocidade alcanÁada";
+        String velocidade = "a velocidade alcan√ßada";
         valores = leValores(velocidade);
 
         Integer numeroAtleta = this.retornaInteiro(valores[1]);
@@ -57,22 +57,22 @@ public class CadastroAtleta {
 
     public int retornaInteiro(String entrada){
         while (!this.intValido(entrada)) {
-            entrada = JOptionPane.showInputDialog(null, "Valor incorreto! \n\nDigite um n˙mero inteiro.");
+            entrada = JOptionPane.showInputDialog(null, "Valor incorreto! \n\nDigite um n√∫mero inteiro.");
         }
         return Integer.parseInt(entrada);
     }
 
     private String menuInit(){
         return "Cadastro de novos Atletas\n" +
-                "OpÁıes:\n" +
+                "Op√ß√µes:\n" +
                 "1. Cadastrar novo Atleta;\n" +
-                "2. Exibir todos Atletas j·\n cadastrados;\n" +
+                "2. Exibir todos Atletas j√°\n cadastrados;\n" +
                 "3. Limpar atletas;\n"+
                 "4. Sair.";
     }
 
     private int getOption(String menu){
-        return this.retornaInteiro(JOptionPane.showInputDialog((menu + "\n\n" + "Digite a opÁ„o desejada:\n")));
+        return this.retornaInteiro(JOptionPane.showInputDialog((menu + "\n\n" + "Digite a op√ß√£o desejada:\n")));
     }
 
     public void menuCadastro(){
@@ -81,17 +81,17 @@ public class CadastroAtleta {
         do{
             opc1 = getOption(menu);
             if(opc1 > 4){
-                System.out.println("OpÁ„o inv·lida, tente novamente!");
+                System.out.println("Op√ß√£o inv√°lida, tente novamente!");
                 menuInit();
                 opc1 = getOption(menu);
             }
             switch (opc1) {
                 case 1: menu = "Cadastro de Novos Atletas:\n" +
-                        "OpÁıes: \n" +
+                        "Op√ß√µes: \n" +
                         "1. Saltador;\n" +
                         "2. Corredor;\n" +
                         "3. Nadador.\n";
-                opc2 = this.retornaInteiro(JOptionPane.showInputDialog(menu + "\n\n" + "Digite a opÁ„o desejada:\n"));
+                opc2 = this.retornaInteiro(JOptionPane.showInputDialog(menu + "\n\n" + "Digite a op√ß√µo desejada:\n"));
                     switch (opc2){
                         case 1: atletas.add(leSaltador());
                             break;
@@ -100,7 +100,7 @@ public class CadastroAtleta {
                         case 3: atletas.add(leNadador());
                             break;
                         default:
-                            JOptionPane.showMessageDialog(null, "Entrada N√O v·lida!");
+                            JOptionPane.showMessageDialog(null, "Entrada n√£o v√°lida!");
                     }
                     menu = menuInit();
                     break;
@@ -130,7 +130,7 @@ public class CadastroAtleta {
         } while (opc1 != 4);
     }
     public static void main (String [] args){
-        CadastroAtleta pet = new CadastroAtleta();
-        pet.menuCadastro();
+        CadastroAtleta atleta = new CadastroAtleta();
+        atleta.menuCadastro();
     }
 }
